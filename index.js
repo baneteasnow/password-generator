@@ -3,7 +3,7 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 
 let passwordLength = 12
 let generateEl = document.getElementById("generate")
-let btnRst = document.getElementById("resetGame")
+let resetBtn = document.getElementById("resetBtn")
 
 function getRandomCharacter() {
     let randomChar = Math.floor(Math.random() * characters.length)
@@ -21,22 +21,20 @@ function generateRandomPassword() {
 const generatedPasswordOne = generateRandomPassword()
 
 function passWord() {
-     generateEl.textContent = generatedPasswordOne
- }
+     generateEl.textContent = generatedPasswordOne 
+}
 
-// console.log("Here is a random password: ", generatedPasswordOne)
-
+resetBtn.addEventListener("click", function() {
+    document.getElementById("generate").innerText = "...";
+});
+  
 function copyEvent(id){
-        var str = document.getElementById(id);
-        window.getSelection().selectAllChildren(str);
-        document.execCommand('Copy')
+    var str = document.getElementById(id);
+    window.getSelection().selectAllChildren(str);
+    document.execCommand('Copy')
     }
 function myFunction() {
-        document.getElementById("copied").innerHTML = "Copied!";
-      }
+        document.getElementById("copied").textContent = "Copied!";
+     }
 
-function resetGame() {
-    generateEl.textContent = " "
-    generateEl = " "
- }
 
