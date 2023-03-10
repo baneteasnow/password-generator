@@ -10,6 +10,7 @@ function getRandomCharacter() {
     return characters[randomChar]
 }
 
+
 function generateRandomPassword() {
     let randomPassword = ""
     for (let i = 0; i < passwordLength; i++) {
@@ -24,10 +25,12 @@ function passWord() {
      generateEl.textContent = generatedPasswordOne 
 }
 
+
 resetBtn.addEventListener("click", function() {
     document.getElementById("generate").innerText = "...";
 });
   
+
 function copyEvent(id){
     var str = document.getElementById(id);
     window.getSelection().selectAllChildren(str);
